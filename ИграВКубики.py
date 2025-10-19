@@ -12,7 +12,6 @@ UpperHand = 0
 EnemyHP = MaxEnemyHP
 Blindness = False
 TotalUpperHand = 0
-PlayerStats = [MaxPlayerHP, PlayerHP, EnemyHP, MaxEnemyHP, Blindness]
 def Tutorial(EnemyHP, MaxEnemyHP, PlayerHP, MaxPlayerHP):
     TutorCheck = 0
     kTutorCheck = 0
