@@ -12,7 +12,7 @@ UpperHand = 0
 EnemyHP = MaxEnemyHP
 Blindness = False
 TotalUpperHand = 0
-def Tutorial(EnemyHP, MaxEnemyHP, PlayerHP, MaxPlayerHP):
+def Tutorial(EnemyHP, MaxEnemyHP):
     TutorCheck = 0
     kTutorCheck = 0
     kTutorUse1 = False
@@ -137,9 +137,10 @@ def TurnCheck(Player):
                     return False
                 else:
                     print("Невалидный ввод, попробуйте ещё раз")
-def pTurn(EnemyHP, MaxEnemyHP, PlayerHP, MaxPlayerHP, Blindness):
+def pTurn(EnemyHP, MaxEnemyHP, PlayerHP, MaxPlayerHP, Blindness,):
         print("Ваш Ход!")
         print()
+        Weaponlist = ["1. Меч (нанести X урона)", "2. Боевой топор (нанести X*2 урона, максимум 4 на кубике)", "3. Кинжал (Нанести 3 урона, многоразовое)"]
         Player = True
         UsageK1 = False
         UsageK2 = False
@@ -193,14 +194,14 @@ def pTurn(EnemyHP, MaxEnemyHP, PlayerHP, MaxPlayerHP, Blindness):
                 print("Ваше снаряжение:")
                 print()
                 if Weapon1Usage == False:
-                    print("1. Меч (нанести X урона)")
+                    print(Weaponlist[0])
                 if Weapon2Usage == False:
-                    print("2. Боевой топор (нанести X*2 урона, максимум 4 на кубике)")
+                    print(Weaponlist[1])
                 if Wunlock3 == True:
-                    print("3. Кинжал (Нанести 3 урона, многоразовое)")
+                    print(Weaponlist[2])
                 print()
                 print("Ваш Ход.")
-                print("Выберите номер снаряжение")
+                print("Выберите номер снаряжения")
                 Wcheck = int(input())
                 if Wcheck == 1 and Weapon1Usage == False:  
                     print() 
@@ -541,11 +542,11 @@ input("Нажимте Enter чтобы продолжить")
 print("Стоп! А ты уверен что помнишь как оружем махать вообще? Весь такой серьёзный и уверенный, а погибнет на первом же слабачке. Хочешь попрактиковатся пока ещё можно?")
 print()
 print("(Необходимо ли вам обучение? (Да/Нет))")
-TutorCheck = input().lower()
 while True:
+    TutorCheck = input().lower()
     if TutorCheck == "да":
         print()
-        Tutorial(EnemyHP, MaxEnemyHP, PlayerHP, MaxPlayerHP)
+        Tutorial(EnemyHP, MaxEnemyHP)
         break
     elif TutorCheck == "нет":
         print("Как знаешь, Воин! Дальше ты сам, Удачи! Она тебе явно пригодится!")
